@@ -14,7 +14,7 @@ Group:		Games/Strategy
 BuildRoot:	%{_tmppath}/%{oname}-%{version}-%{release}-buildroot
 License:	GPL
 BuildRequires:	SDL-devel bzip2-devel oggvorbis-devel libmikmod-devel X11-devel
-BuildRequires:	mad-devel libcdaudio-devel lua5.0-devel libflac-devel libpng-devel
+BuildRequires:	mad-devel libcdaudio-devel lua-devel libflac-devel libpng-devel
 
 %description
 Stratagus is a free cross-platform real-time strategy gaming engine.
