@@ -9,6 +9,8 @@ Summary:	A real time strategy game engine
 Version:	%{version} 
 Release:	%{release} 
 Source0:	%{oname}-%{version}.tar.bz2
+# http://bugs.debian.org/cgi-bin/bugreport.cgi?msg=10;filename=stratagus-2.1-flacapifix.diff;att=1;bug=427755
+Patch0:		stratagus-2.1-flacapifix.diff
 URL:		http://stratagus.sourceforge.net/
 Group:		Games/Strategy
 BuildRoot:	%{_tmppath}/%{oname}-%{version}-%{release}-buildroot
@@ -24,6 +26,7 @@ wide-range of features specific to your needs.
 
 %prep
 %setup -q -n %{oname}-%{version}
+%patch0 -p1
 
 # lib64 fixes
 perl -pi -e "s|/lib\b|/%{_lib}|g" configure*
