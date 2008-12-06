@@ -9,12 +9,13 @@ Summary:	A real time strategy game engine
 Version:	%{version} 
 Release:	%{release} 
 Source0:	%{oname}-%{version}.tar.bz2
+Patch0:		stratagus-2.1-buildfix.diff
 URL:		http://stratagus.sourceforge.net/
 Group:		Games/Strategy
 BuildRoot:	%{_tmppath}/%{oname}-%{version}-%{release}-buildroot
 License:	GPL
 BuildRequires:	SDL-devel bzip2-devel oggvorbis-devel libmikmod-devel X11-devel
-BuildRequires:	mad-devel libcdaudio-devel lua-devel libflac-devel libpng-devel
+BuildRequires:	mad-devel libcdaudio-devel lua5.0-devel libflac-devel libpng-devel
 
 %description
 Stratagus is a free cross-platform real-time strategy gaming engine.
@@ -26,15 +27,32 @@ wide-range of features specific to your needs.
 %setup -q -n %{oname}-%{version}
 
 %build
-%configure	--with-opengl \
-		--with-x \
-		--with-bzip2 \
-		--with-ogg \
-		--with-mikmod \
-		--with-mad \
-		--with-flac \
-		--with-cdaudio=libcda \
-		EXTRA_CFLAGS="$RPM_OPT_FLAGS"
+
+./configure --host=%{_host} --build=%{_build} \
+    --target=%{_target_platform} \
+    --program-prefix=%{?_program_prefix} \
+    --prefix=%{_prefix} \
+    --exec-prefix=%{_exec_prefix} \
+    --bindir=%{_bindir} \
+    --sbindir=%{_sbindir} \
+    --sysconfdir=%{_sysconfdir} \
+    --datadir=%{_datadir} \
+    --includedir=%{_includedir} \
+    --libdir=%{_libdir} \
+    --libexecdir=%{_libexecdir} \
+    --localstatedir=%{_localstatedir} \
+    --sharedstatedir=%{_sharedstatedir} \
+    --mandir=%{_mandir} \
+    --infodir=%{_infodir} \
+    --with-opengl \
+    --with-x \
+    --with-bzip2 \
+    --with-ogg \
+    --with-mikmod \
+    --with-mad \
+    --with-flac \
+    --with-cdaudio=libcda \
+    --with-lua=%{_prefix}
 
 make
 
