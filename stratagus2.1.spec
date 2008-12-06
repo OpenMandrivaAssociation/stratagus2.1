@@ -13,10 +13,19 @@ Source0:	%{oname}-%{version}.tar.bz2
 Patch0:		stratagus-2.1-flacapifix.diff
 URL:		http://stratagus.sourceforge.net/
 Group:		Games/Strategy
-BuildRoot:	%{_tmppath}/%{oname}-%{version}-%{release}-buildroot
 License:	GPL
-BuildRequires:	SDL-devel bzip2-devel oggvorbis-devel libmikmod-devel X11-devel
-BuildRequires:	mad-devel libcdaudio-devel lua5.0-devel libflac-devel libpng-devel
+BuildRequires:	SDL-devel
+BuildRequires:	X11-devel
+BuildRequires:	bzip2-devel
+BuildRequires:	imagemagick
+BuildRequires:	libcdaudio-devel
+BuildRequires:	libflac-devel
+BuildRequires:	libmikmod-devel
+BuildRequires:	libpng-devel
+BuildRequires:	lua5.0-devel
+BuildRequires:	mad-devel
+BuildRequires:	oggvorbis-devel
+BuildRoot:	%{_tmppath}/%{oname}-%{version}-%{release}-buildroot
 
 %description
 Stratagus is a free cross-platform real-time strategy gaming engine.
