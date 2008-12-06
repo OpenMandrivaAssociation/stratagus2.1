@@ -9,7 +9,6 @@ Summary:	A real time strategy game engine
 Version:	%{version} 
 Release:	%{release} 
 Source0:	%{oname}-%{version}.tar.bz2
-Patch0:		stratagus-2.1-buildfix.diff
 URL:		http://stratagus.sourceforge.net/
 Group:		Games/Strategy
 BuildRoot:	%{_tmppath}/%{oname}-%{version}-%{release}-buildroot
