@@ -25,6 +25,9 @@ wide-range of features specific to your needs.
 %prep
 %setup -q -n %{oname}-%{version}
 
+# lib64 fixes
+perl -pi -e "s|/lib\b|/%{_lib}|g" configure*
+
 %build
 
 ./configure --host=%{_host} --build=%{_build} \
