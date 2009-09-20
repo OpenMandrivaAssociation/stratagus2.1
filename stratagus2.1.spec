@@ -1,7 +1,7 @@
 %define name	stratagus2.1
 %define	oname	stratagus
 %define	version 2.1
-%define rel	2
+%define rel	3
 %define	release	%mkrel %{rel}
 
 Name:		%{name} 
