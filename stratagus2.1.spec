@@ -1,7 +1,7 @@
 %define name	stratagus2.1
 %define	oname	stratagus
 %define	version 2.1
-%define rel	3
+%define rel	4
 %define	release	%mkrel %{rel}
 
 Name:		%{name} 
@@ -14,17 +14,17 @@ Patch0:		stratagus-2.1-flacapifix.diff
 URL:		http://stratagus.sourceforge.net/
 Group:		Games/Strategy
 License:	GPL
+BuildRequires:	libflac-devel
+BuildRequires:	mesagl-devel
 BuildRequires:	SDL-devel
-BuildRequires:	X11-devel
 BuildRequires:	bzip2-devel
 BuildRequires:	imagemagick
-BuildRequires:	libcdaudio-devel
-BuildRequires:	libflac-devel
-BuildRequires:	libmikmod-devel
-BuildRequires:	libpng-devel
 BuildRequires:	lua5.0-devel
 BuildRequires:	mad-devel
+BuildRequires:	libmikmod-devel
+BuildRequires:	libpng-devel
 BuildRequires:	oggvorbis-devel
+BuildRequires:	zlib-devel
 BuildRoot:	%{_tmppath}/%{oname}-%{version}-%{release}-buildroot
 
 %description
