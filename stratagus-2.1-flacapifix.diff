@@ -1,0 +1,24 @@
+--- stratagus-2.1/src/sound/flac.c	2004-06-26 01:22:33.000000000 +0200
++++ stratagus-2.1-fixed/src/sound/flac.c	2007-06-13 21:16:28.000000000 +0200
+@@ -339,12 +339,15 @@
+ 	sample->Pos = 0;
+ 	sample->User = data;
+ 
+-	FLAC__stream_decoder_set_read_callback(stream, FLAC_read_callback);
+-	FLAC__stream_decoder_set_write_callback(stream, FLAC_write_callback);
+-	FLAC__stream_decoder_set_metadata_callback(stream, FLAC_metadata_callback);
+-	FLAC__stream_decoder_set_error_callback(stream, FLAC_error_callback);
+-	FLAC__stream_decoder_set_client_data(stream, sample);
+-	FLAC__stream_decoder_init(stream);
++	FLAC__stream_decoder_init_stream(
++		stream,
++		FLAC_read_callback,
++		NULL, NULL, NULL, NULL,
++		FLAC_write_callback,
++		FLAC_metadata_callback,
++		FLAC_error_callback,
++		(void*) sample
++	);
+ 
+ 	if (flags & PlayAudioStream) {
+ 		sample->Buffer = malloc(SOUND_BUFFER_SIZE);
