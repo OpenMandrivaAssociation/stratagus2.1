@@ -11,7 +11,7 @@ Release:	%{release}
 Source0:	%{oname}-%{version}.tar.bz2
 # http://bugs.debian.org/cgi-bin/bugreport.cgi?msg=10;filename=stratagus-2.1-flacapifix.diff;att=1;bug=427755
 Patch0:		stratagus-2.1-flacapifix.diff
-URL:		http://stratagus.sourceforge.net/
+URL:		https://stratagus.sourceforge.net/
 Group:		Games/Strategy
 License:	GPL
 BuildRequires:	libflac-devel
